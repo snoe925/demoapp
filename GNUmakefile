@@ -16,7 +16,7 @@ debug: build.debug/CMakeCache.txt $(SRCS)
 
 build.debug/CMakeCache.txt: $(find . -name CMakeLists.txt)
 	mkdir -p build.debug
-	cmake -E chdir build.debug cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=OFF -DBUILD_EXTERNAL=OFF ..
+	cmake -E chdir build.debug cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=OFF -DBUILD_EXTERNAL=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..
 
 build.test/CMakeCache.txt: $(find . -name CMakeLists.txt)
 	mkdir -p build.test
